@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:project_recorder/model/user/login/login_page.dart';
 
 import '../../util/app_colors.dart';
 import '../../util/app_screenAdapter.dart';
@@ -17,13 +18,51 @@ class SettingPage extends GetView<SettingPageController> {
     // TODO: implement build
     return Obx(() => Container(
           color: DoColors.black0,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: ListView(
             children: [
               _loginStatus(),
               _remainingCloudSpace(),
               _vipView(),
-              settingListView()
+              _intermediateLayoutView(
+                  "历史对话",
+                  "assets/images/res_img_setting_history.png",
+                  "离线资源包",
+                  "assets/images/res_img_setting_offline_resource.png",
+                  "",
+                  ""),
+              const SizedBox(
+                height: 12,
+              ),
+              _intermediateLayoutView(
+                  "WLAN",
+                  "assets/images/res_img_setting_wifi.png",
+                  "蓝牙",
+                  "assets/images/res_img_setting_ble.png",
+                  "",
+                  ""),
+              const SizedBox(
+                height: 12,
+              ),
+              _intermediateLayoutView(
+                  "转写设置",
+                  "assets/images/res_img_setting_tran.png",
+                  "通用设置",
+                  "assets/images/res_img_setting_general.png",
+                  "",
+                  ""),
+              const SizedBox(
+                height: 12,
+              ),
+              _intermediateLayoutView(
+                  "帮助与反馈",
+                  "assets/images/res_img_setting_feedback.png",
+                  "系统更新",
+                  "assets/images/res_img_setting_update.png",
+                  "",
+                  ""),
+              const SizedBox(
+                height: 12,
+              ),
             ],
           ),
         ));
@@ -36,6 +75,7 @@ class SettingPage extends GetView<SettingPageController> {
       child: InkWell(
         onTap: () {
           //判断当前是否登录，如果登录，进入个人信息页面。未登录则进行登录页面
+          Get.toNamed(LoginPage.routeName);
         },
         child: Row(
           children: [
@@ -135,17 +175,43 @@ class SettingPage extends GetView<SettingPageController> {
     );
   }
 
-  Widget settingListView() {
-    return settingItemView("历史对话", "assets/images/res_img_setting_history.png");
+  ///中间部分布局
+  Widget _intermediateLayoutView(
+    String title1,
+    String iconPath1,
+    String title2,
+    String iconPath2,
+    String routeName1,
+    String routeName2,
+  ) {
+    return Container(
+        color: DoColors.settingItemBg,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            settingItemView(title1, iconPath1, routeName1),
+            Container(
+              margin: const EdgeInsets.fromLTRB(12, 0, 12, 0),
+              height: 1,
+              width: DoScreenAdapter.screenW(),
+              color: DoColors.dividerLineColor,
+            ),
+            settingItemView(title2, iconPath2, routeName2),
+          ],
+        ));
   }
 
-  Widget settingItemView(String itemTitle, String logoPath) {
-    return Container(
+  ///每个item的布局
+  Widget settingItemView(String itemTitle, String logoPath, String routeName) {
+    return SizedBox(
       width: DoScreenAdapter.screenW(),
-      height: 40,
-      color: DoColors.settingItemBg,
+      height: 50,
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          if (routeName.isNotEmpty) {
+            Get.toNamed(routeName);
+          }
+        },
         child: Stack(
           alignment: AlignmentDirectional.centerStart,
           children: [

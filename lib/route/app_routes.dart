@@ -4,6 +4,7 @@ import 'package:project_recorder/model/home/record/record_page.dart';
 import 'package:project_recorder/model/home/record/record_page_binding.dart';
 import 'package:project_recorder/model/main/main_page.dart';
 import 'package:project_recorder/model/main/main_page_binding.dart';
+import 'package:project_recorder/model/user/login/login_page_binding.dart';
 
 import '../model/file/detail/record_details_page.dart';
 import '../model/file/file_page.dart';
@@ -15,6 +16,11 @@ import '../model/home/transsetting/trans_setting_page.dart';
 import '../model/home/transsetting/trans_setting_page_binding.dart';
 import '../model/setting/setting_page.dart';
 import '../model/tool/tool_page.dart';
+import '../model/user/forget/forget_page.dart';
+import '../model/user/forget/forget_page_binding.dart';
+import '../model/user/login/login_page.dart';
+import '../model/user/register/register_page.dart';
+import '../model/user/register/register_page_binding.dart';
 
 var routes = [
   GetPage(
@@ -57,5 +63,20 @@ var routes = [
     name: RecordDetailsPage.routeName,
     page: () => const RecordDetailsPage(),
     binding: RecordDetailsPageBinding(),
+  ),
+  GetPage(
+    name: LoginPage.routeName,
+    page: () => const LoginPage(),
+    binding: LoginPageBinding(),
+  ),
+  GetPage(
+    name: ForgetPage.routeName,
+    page: () => const ForgetPage(),
+    binding: ForgetPageBinding(),
+  ),
+  GetPage(
+    name: RegisterPage.routeName,
+    page: () => const RegisterPage(),
+    binding: RegisterPageBinding(),
   ),
 ];

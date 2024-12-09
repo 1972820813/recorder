@@ -39,8 +39,7 @@ class DoColors {
   static const Color black28 = Color.fromRGBO(28, 28, 28, 1);
   static const Color vipTextColor = Color.fromRGBO(61, 41, 12, 1);
   static const Color settingItemBg = Color.fromRGBO(18, 18, 18, 1);
-
-
+  static const Color dividerLineColor = Color.fromRGBO(43, 43, 46, 1);
 
   ///颜色值转换
   static Color string2Color(String colorString) {
