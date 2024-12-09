@@ -11,6 +11,19 @@ import 'package:project_recorder/util/app_colors.dart';
 import 'package:project_recorder/util/app_language.dart';
 import 'package:project_recorder/util/theme.dart';
 
+/// a: Record-20240530
+///  l: zh-CN
+///  v: 112
+///  tk:
+///  ts: 1733707491
+///  n: 6TAbeO
+///  sign: 367290887a27e8eac8fab29b79106db0
+///  c: M-20240530
+///  tz: Asia/Shanghai
+///  d: 2
+///  f: 202411090000003
+///  os: M-20240530
+///  sv: 6.0
 void main() {
   //flutter 修改状态栏的颜色
   SystemUiOverlayStyle systemUiOverlayStyle =
