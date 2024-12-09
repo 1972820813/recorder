@@ -100,14 +100,6 @@ class HomeChildPage extends GetView<HomeChildPageController> {
                 Get.toNamed(LanguagePage.routeName);
               },
             ),
-          ),
-          Container(
-            margin: const EdgeInsets.only(bottom: 20),
-            alignment: Alignment.bottomCenter,
-            child: const Text(
-              "page_view 指示器",
-              style: TextStyle(color: Colors.lightBlueAccent),
-            ),
           )
         ],
       ),

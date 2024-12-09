@@ -38,6 +38,9 @@ dependencies:
   flutter_native_splash: ^2.2.19
   flutter_easyloading: ^3.0.3
   badges: ^3.0.3
+  flutter_swiper_view: ^1.1.8
+  flutter_svg: ^1.0.0
+
 
 
 
@@ -70,6 +73,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/svg/
 #    - assets/images/res_icon_normal_record.png
 #    - assets/images/res_icon_select_files.png
 #    - assets/images/res_icon_select_record.png

@@ -9,6 +9,7 @@ class HomePageController extends GetxController {
   PageController pageController = Get.arguments == null
       ? PageController(initialPage: 0)
       : PageController(initialPage: Get.arguments["initialPage"]);
+  RxInt currentIndex = 0.obs;
 
   //当前时间
   Rx<DateTime> dateTime = DateTime.now().obs;

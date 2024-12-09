@@ -31,11 +31,14 @@ class DoColors {
   static const Color gray238 = Color.fromRGBO(238, 238, 238, 1);
   static const Color gray249 = Color.fromRGBO(249, 249, 249, 1);
   static const Color gray102 = Color.fromRGBO(102, 102, 102, 1);
+  static const Color gray153 = Color.fromRGBO(153, 153, 153, 1);
 
   static const Color customColor = Color.fromRGBO(16, 177, 167, 1);
   static const Color mainTabBackground = Color.fromRGBO(19, 19, 19, 1);
   static const Color white85 = Color.fromRGBO(255, 255, 255, 0.85);
   static const Color black28 = Color.fromRGBO(28, 28, 28, 1);
+  static const Color vipTextColor = Color.fromRGBO(61, 41, 12, 1);
+  static const Color settingItemBg = Color.fromRGBO(18, 18, 18, 1);
 
 
 

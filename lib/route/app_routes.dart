@@ -1,9 +1,11 @@
 import 'package:get/get.dart';
+import 'package:project_recorder/model/file/detail/record_details_page_binding.dart';
 import 'package:project_recorder/model/home/record/record_page.dart';
 import 'package:project_recorder/model/home/record/record_page_binding.dart';
 import 'package:project_recorder/model/main/main_page.dart';
 import 'package:project_recorder/model/main/main_page_binding.dart';
 
+import '../model/file/detail/record_details_page.dart';
 import '../model/file/file_page.dart';
 import '../model/home/home_page.dart';
 import '../model/home/language/language_page.dart';
@@ -50,5 +52,10 @@ var routes = [
   GetPage(
     name: SchemaDetailsPage.routeName,
     page: () => const SchemaDetailsPage(),
+  ),
+  GetPage(
+    name: RecordDetailsPage.routeName,
+    page: () => const RecordDetailsPage(),
+    binding: RecordDetailsPageBinding(),
   ),
 ];

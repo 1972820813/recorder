@@ -9,17 +9,16 @@ Widget customBar(String title) {
     color: DoColors.black28,
     child: Row(
       children: [
-        const SizedBox(width: 6), // 50宽度
         InkWell(
           onTap: () {
             Get.back();
           },
           child: Image.asset(
             "assets/images/icon_custom_back.png",
-            width: 18,
+            width: 40,
+            height: 18,
           ),
-        ),
-        const SizedBox(width: 6), // 50宽度
+        ), // 50宽度
         Text(
           title,
           style: const TextStyle(fontSize: 16, color: DoColors.white85),

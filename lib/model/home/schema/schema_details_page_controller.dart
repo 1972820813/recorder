@@ -12,6 +12,13 @@ class SchemaDetailsPageController extends GetxController {
   int currentPageIndex =
       Get.arguments != null ? Get.arguments["home_child_page_index"] : 0;
 
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    updatePageInfo();
+  }
+
   void updatePageInfo() {
     switch (currentPageIndex) {
       case 0:
