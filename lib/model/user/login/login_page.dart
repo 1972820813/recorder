@@ -47,7 +47,10 @@ class LoginPage extends GetView<LoginPageController> {
                 margin: const EdgeInsets.all(16),
                 height: 40,
                 child: TextField(
-                  decoration: InputDecoration(hintText: "请输入账号"),
+                  decoration: const InputDecoration(
+                      hintText: "邮箱",
+                      hintStyle:
+                          TextStyle(fontSize: 16, color: DoColors.gray102)),
                   onChanged: (value) {},
                   controller: controller.textEditingController,
                   style: const TextStyle(fontSize: 16, color: DoColors.white85),
