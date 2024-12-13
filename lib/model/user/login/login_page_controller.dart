@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project_recorder/network/network.dart';
 import 'package:project_recorder/util/app_colors.dart';
+import 'package:project_recorder/util/constant_util.dart';
+
+import '../../../network/network.dart';
 
 class LoginPageController extends GetxController {
   TextEditingController emailController = TextEditingController();
@@ -42,9 +44,12 @@ class LoginPageController extends GetxController {
       return;
     }
 
-    var data = await Network().post("/api/login/password",
-        data: {"account": loginEmail.value, "pwd": loginPassword.value});
+    var data =
+        await NetworkManager.getInstance().post("/api/login/password", data: {
+      "account": loginEmail.value,
+      "pwd": ConstantUtil.generateMD5(loginPassword.value)
+    });
     print(
-        "${data.toString()}        --->${loginEmail.value}   --->${loginPassword.value}   ${DateTime.now().millisecond}");
+        "${data.toString()}");
   }
 }
