@@ -143,6 +143,7 @@ class SettingPage extends GetView<SettingPageController> {
               "assets/images/res_img_vip_bg.png",
               width: DoScreenAdapter.screenW(),
               height: 60,
+              fit: BoxFit.cover,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 12),

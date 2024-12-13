@@ -19,6 +19,7 @@ class DoColors {
   ///标签相关
   // static const Color chipNormalGray = Color.fromRGBO(245, 244, 245, 1);
   static const Color chipSelectedBG = Color.fromRGBO(251, 239, 237, 1);
+  static const Color white = Color.fromRGBO(255, 255, 255, 1);
 
   //static const Color black = Color(0xff000000);
   static const Color black0 = Color.fromRGBO(0, 0, 0, 1); //导航栏主标题
@@ -36,6 +37,7 @@ class DoColors {
   static const Color customColor = Color.fromRGBO(16, 177, 167, 1);
   static const Color mainTabBackground = Color.fromRGBO(19, 19, 19, 1);
   static const Color white85 = Color.fromRGBO(255, 255, 255, 0.85);
+  static const Color white60 = Color.fromRGBO(255, 255, 255, 0.60);
   static const Color black28 = Color.fromRGBO(28, 28, 28, 1);
   static const Color vipTextColor = Color.fromRGBO(61, 41, 12, 1);
   static const Color settingItemBg = Color.fromRGBO(18, 18, 18, 1);
