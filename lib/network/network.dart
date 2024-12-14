@@ -1,8 +1,3 @@
-import 'dart:collection';
-import 'dart:convert';
-import 'dart:typed_data';
-
-import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
 import 'package:project_recorder/util/constant_util.dart';
 
@@ -45,21 +40,18 @@ class NetworkManager {
     };
     var sign = _sign(header);
     header["sign"] = sign;
-    header[sign] = "Asia/Shanghai";
-    print("数据：${header.toString()}");
+    header["tz"] = "Asia/Shanghai";
     return header;
   }
 
   static String _sign(Map<String, String> map) {
     List<String> list = map.keys.toList();
     list.sort();
-    print(list.toString());
     String str = "";
     for (int i = 0; i < list.length; i++) {
       str += "${list[i]}=${map[list[i]]}&";
     }
     str += "key=QDRgdOq7W8cj7HbwqSfGlysxlYstp6Gh";
-    print(str);
     return ConstantUtil.generateMD5(str);
   }
 

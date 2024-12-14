@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:project_recorder/util/app_colors.dart';
 import 'package:project_recorder/util/constant_util.dart';
 
+import '../../../entity/response_entity.dart';
 import '../../../network/network.dart';
 
 class LoginPageController extends GetxController {
@@ -49,7 +50,8 @@ class LoginPageController extends GetxController {
       "account": loginEmail.value,
       "pwd": ConstantUtil.generateMD5(loginPassword.value)
     });
-    print(
-        "${data.toString()}");
+    print(data.toString());
+    var fromJson = ResponseEntity.fromJson(data);
+    print(fromJson.toJson().toString());
   }
 }
