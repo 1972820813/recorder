@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:project_recorder/model/user/login/login_page.dart';
+import 'package:project_recorder/model/account//login/login_page.dart';
 
 import '../../util/app_colors.dart';
 import '../../util/app_screenAdapter.dart';
@@ -74,8 +74,14 @@ class SettingPage extends GetView<SettingPageController> {
       padding: const EdgeInsets.fromLTRB(12, 6, 12, 6),
       child: InkWell(
         onTap: () {
+          // if (controller.userToken.value.isNotEmpty) {
+          //   //个人信息页面
+          //   Get.toNamed(UserInfoPage.routeName);
+          // } else {
           //判断当前是否登录，如果登录，进入个人信息页面。未登录则进行登录页面
           Get.toNamed(LoginPage.routeName);
+          // }
+          controller.position.value += 1;
         },
         child: Row(
           children: [

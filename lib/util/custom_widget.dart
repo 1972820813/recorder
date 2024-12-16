@@ -6,7 +6,7 @@ import 'app_colors.dart';
 Widget customBar(String title) {
   return Container(
     height: 45,
-    color: DoColors.black28,
+    color: DoColors.black0,
     child: Row(
       children: [
         InkWell(

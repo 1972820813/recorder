@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project_recorder/model/user/forget/forget_page.dart';
-import 'package:project_recorder/model/user/register/register_page.dart';
+import 'package:project_recorder/model/account/forget/forget_page.dart';
+import 'package:project_recorder/model/account/login/login_page_controller.dart';
+import 'package:project_recorder/model/account/register/register_page.dart';
+import 'package:project_recorder/model/webView/cumstom_web_view.dart';
+import 'package:project_recorder/model/widget/click_text.dart';
 import 'package:project_recorder/util/app_colors.dart';
+import 'package:project_recorder/util/app_screenAdapter.dart';
 
-import '../../../util/app_screenAdapter.dart';
-import '../../widget/click_text.dart';
-import 'login_page_controller.dart';
 
 class LoginPage extends GetView<LoginPageController> {
   static const String routeName = "/login_page";
@@ -217,8 +218,7 @@ class LoginPage extends GetView<LoginPageController> {
                         title: "《服务协议》",
                         color: DoColors.customColor,
                         onTop: () {
-                          Get.snackbar("服务协议", "服务协议",
-                              backgroundColor: DoColors.white85);
+                          Get.toNamed(CustomWebView.routeName);
                         },
                       ),
                       agreementView("和", DoColors.white60),
@@ -226,8 +226,7 @@ class LoginPage extends GetView<LoginPageController> {
                         title: "《隐私协议》",
                         color: DoColors.customColor,
                         onTop: () {
-                          Get.snackbar("隐私协议", "隐私协议",
-                              backgroundColor: DoColors.white85);
+                          Get.toNamed(CustomWebView.routeName);
                         },
                       ),
                     ],

@@ -1,11 +1,13 @@
+import 'package:shared_preferences/shared_preferences.dart';
+
 class ResponseEntity {
   ResponseEntity(
       this.responseData, this.code, this.debug_msg, this.msg, this.signature);
 
   String msg;
   String debug_msg;
-  String code;
-  String signature;
+  int code;
+  int signature;
   ResponseData responseData;
 
   ResponseEntity.fromJson(Map<String, dynamic> json)
@@ -36,7 +38,7 @@ class ResponseData {
       : tokenInfo = TokenInfo.fromJson(json['token_info']),
         regUser = json['reg_user'],
         userInfo = UserInfo.fromJson(json['userinfo']),
-        microsoftCfg = json['microsoft_cfg'];
+        microsoftCfg = MicrosoftCfg.fromJson(json['microsoft_cfg']);
 
   Map<String, dynamic> toJson() => {
         'token_info': tokenInfo.toJson(),
@@ -47,18 +49,18 @@ class ResponseData {
 }
 
 class MicrosoftCfg {
-  MicrosoftCfg(this.speechKey, this.uid);
+  MicrosoftCfg(this.speechKey, this.speechRegion);
 
   String speechKey;
-  String uid;
+  String speechRegion;
 
   MicrosoftCfg.fromJson(Map<String, dynamic> json)
       : speechKey = json['speechKey'],
-        uid = json['uid'];
+        speechRegion = json['speechRegion'];
 
   Map<String, dynamic> toJson() => {
         'speechKey': speechKey,
-        'uid': uid,
+        'speechRegion': speechRegion,
       };
 }
 
@@ -66,8 +68,8 @@ class TokenInfo {
   TokenInfo(this.accessToken, this.expireTime, this.refreshTime);
 
   String accessToken;
-  String refreshTime;
-  String expireTime;
+  int refreshTime;
+  int expireTime;
 
   TokenInfo.fromJson(Map<String, dynamic> json)
       : accessToken = json['access_token'],

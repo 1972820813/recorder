@@ -1,26 +1,29 @@
 import 'package:get/get.dart';
+import 'package:project_recorder/model/account/forget/forget_page.dart';
+import 'package:project_recorder/model/account/forget/forget_page_binding.dart';
+import 'package:project_recorder/model/account/login/login_page.dart';
+import 'package:project_recorder/model/account/register/register_page.dart';
+import 'package:project_recorder/model/account/register/register_page_binding.dart';
+import 'package:project_recorder/model/file/detail/record_details_page.dart';
 import 'package:project_recorder/model/file/detail/record_details_page_binding.dart';
+import 'package:project_recorder/model/file/file_page.dart';
+import 'package:project_recorder/model/home/home_page.dart';
+import 'package:project_recorder/model/home/language/language_page.dart';
+import 'package:project_recorder/model/home/language/language_page_binding.dart';
 import 'package:project_recorder/model/home/record/record_page.dart';
 import 'package:project_recorder/model/home/record/record_page_binding.dart';
+import 'package:project_recorder/model/home/schema/schema_details_page.dart';
+import 'package:project_recorder/model/home/transsetting/trans_setting_page.dart';
+import 'package:project_recorder/model/home/transsetting/trans_setting_page_binding.dart';
 import 'package:project_recorder/model/main/main_page.dart';
 import 'package:project_recorder/model/main/main_page_binding.dart';
-import 'package:project_recorder/model/user/login/login_page_binding.dart';
+import 'package:project_recorder/model/account//login/login_page_binding.dart';
+import 'package:project_recorder/model/account/userinfo/user_info_page.dart';
+import 'package:project_recorder/model/account/userinfo/user_info_page_binding.dart';
+import 'package:project_recorder/model/setting/setting_page.dart';
+import 'package:project_recorder/model/tool/tool_page.dart';
+import 'package:project_recorder/model/webView/cumstom_web_view.dart';
 
-import '../model/file/detail/record_details_page.dart';
-import '../model/file/file_page.dart';
-import '../model/home/home_page.dart';
-import '../model/home/language/language_page.dart';
-import '../model/home/language/language_page_binding.dart';
-import '../model/home/schema/schema_details_page.dart';
-import '../model/home/transsetting/trans_setting_page.dart';
-import '../model/home/transsetting/trans_setting_page_binding.dart';
-import '../model/setting/setting_page.dart';
-import '../model/tool/tool_page.dart';
-import '../model/user/forget/forget_page.dart';
-import '../model/user/forget/forget_page_binding.dart';
-import '../model/user/login/login_page.dart';
-import '../model/user/register/register_page.dart';
-import '../model/user/register/register_page_binding.dart';
 
 var routes = [
   GetPage(
@@ -79,4 +82,11 @@ var routes = [
     page: () => const RegisterPage(),
     binding: RegisterPageBinding(),
   ),
+  GetPage(
+      name: UserInfoPage.routeName,
+      page: () => const UserInfoPage(),
+      binding: UserInfoBinding()),
+  GetPage(
+      name: CustomWebView.routeName,
+      page: () => const CustomWebView()),
 ];

@@ -15,7 +15,7 @@ class SchemaDetailsPage extends GetView<SchemaDetailsPageController> {
     Get.lazyPut(() => SchemaDetailsPageController());
     // TODO: implement build
     return Obx(() => Container(
-          color: DoColors.black28,
+          color: DoColors.black0,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

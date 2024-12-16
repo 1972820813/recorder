@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:project_recorder/entity/response_entity.dart';
+import 'package:project_recorder/network/network.dart';
 import 'package:project_recorder/util/app_colors.dart';
 import 'package:project_recorder/util/constant_util.dart';
-
-import '../../../entity/response_entity.dart';
-import '../../../network/network.dart';
+import 'package:project_recorder/util/shared_preference_util.dart';
 
 class LoginPageController extends GetxController {
   TextEditingController emailController = TextEditingController();
@@ -15,7 +15,7 @@ class LoginPageController extends GetxController {
       borderSide: const BorderSide(style: BorderStyle.none));
 
   Rx<String> iconLoginPwdHint = "assets/images/res_icon_hint.png".obs;
-  Rx<bool> isShowPassword = false.obs;
+  Rx<bool> isShowPassword = true.obs;
   Rx<String> loginEmail = "".obs;
   Rx<String> loginPassword = "".obs;
   Rx<bool> isAgreementChecked = false.obs;
@@ -50,8 +50,10 @@ class LoginPageController extends GetxController {
       "account": loginEmail.value,
       "pwd": ConstantUtil.generateMD5(loginPassword.value)
     });
-    print(data.toString());
     var fromJson = ResponseEntity.fromJson(data);
-    print(fromJson.toJson().toString());
+
+    SharedPreferenceUtil.setData(
+        ConstantUtil.KEY_TOKEN, fromJson.responseData.tokenInfo.accessToken);
+    Get.back();
   }
 }
