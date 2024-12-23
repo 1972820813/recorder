@@ -79,7 +79,8 @@ class SettingPage extends GetView<SettingPageController> {
           //   Get.toNamed(UserInfoPage.routeName);
           // } else {
           //判断当前是否登录，如果登录，进入个人信息页面。未登录则进行登录页面
-          Get.toNamed(LoginPage.routeName);
+          Get.toNamed(LoginPage.routeName)!
+              .then((value) => controller.profile());
           // }
           controller.position.value += 1;
         },

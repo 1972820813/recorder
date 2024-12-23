@@ -18,17 +18,15 @@ class SettingPageController extends GetxController {
     // TODO: implement onInit
     super.onInit();
     // checkUserToken();
-    print("alex onInit setting page  ${position.value}");
   }
 
   @override
   void onReady() {
     // TODO: implement onReady
     super.onReady();
-    print("alex onReady setting page  ${position.value}");
   }
 
-   checkUserToken() {
+  checkUserToken() {
     var token = SharedPreferenceUtil.getData(ConstantUtil.KEY_TOKEN);
     if (token == null) {
       return false;
@@ -43,5 +41,6 @@ class SettingPageController extends GetxController {
   ///获取个人信息
   profile() {
     // NetworkManager.getInstance().post("apiPath");
+    print("alex 登录完成后的回调");
   }
 }

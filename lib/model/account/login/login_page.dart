@@ -8,7 +8,6 @@ import 'package:project_recorder/model/widget/click_text.dart';
 import 'package:project_recorder/util/app_colors.dart';
 import 'package:project_recorder/util/app_screenAdapter.dart';
 
-
 class LoginPage extends GetView<LoginPageController> {
   static const String routeName = "/login_page";
 

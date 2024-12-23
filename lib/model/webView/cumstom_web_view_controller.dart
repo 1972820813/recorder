@@ -4,9 +4,8 @@ import 'package:webview_flutter/webview_flutter.dart';
 import '../../util/app_colors.dart';
 
 class CustomWebViewController extends GetxController {
-  // Rx<String> url = Get.arguments["url"];
-
   String url = "https://www.baidu.com/";
+
   // String url = Get.arguments['url'];
 
   late WebViewController webViewController;
@@ -16,7 +15,17 @@ class CustomWebViewController extends GetxController {
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setBackgroundColor(DoColors.black0)
       ..setNavigationDelegate(
-          NavigationDelegate(onPageFinished: (url) {}, onProgress: (value) {}))
+        NavigationDelegate(
+          onPageFinished: (url) {},
+          onProgress: (value) {},
+          onNavigationRequest: (request) {
+            if (request.url.startsWith('https://www.youtube.com/')) {
+              return NavigationDecision.prevent;
+            }
+            return NavigationDecision.navigate;
+          },
+        ),
+      )
       ..loadRequest(Uri.parse(url));
   }
 

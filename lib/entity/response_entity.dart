@@ -1,5 +1,3 @@
-import 'package:shared_preferences/shared_preferences.dart';
-
 class ResponseEntity {
   ResponseEntity(
       this.responseData, this.code, this.debug_msg, this.msg, this.signature);

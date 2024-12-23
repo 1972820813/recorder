@@ -43,7 +43,7 @@ dependencies:
   dio: ^5.0.2
   crypto: ^3.0.1
   shared_preferences: ^2.0.15
-  webview_flutter: ^4.8.0
+  webview_flutter: ^4.0.5
 
 
 
