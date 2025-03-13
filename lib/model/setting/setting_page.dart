@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:project_recorder/model/account//login/login_page.dart';
+import 'package:project_recorder/model/home/transsetting/trans_setting_page.dart';
+import 'package:project_recorder/model/setting/ble/ble_page.dart';
+import 'package:project_recorder/model/setting/wifi/wifi_page.dart';
 
 import '../../util/app_colors.dart';
 import '../../util/app_screenAdapter.dart';
@@ -38,8 +41,8 @@ class SettingPage extends GetView<SettingPageController> {
                   "assets/images/res_img_setting_wifi.png",
                   "蓝牙",
                   "assets/images/res_img_setting_ble.png",
-                  "",
-                  ""),
+                  WifiPage.routeName,
+                  BlePage.routeName),
               const SizedBox(
                 height: 12,
               ),
@@ -48,7 +51,7 @@ class SettingPage extends GetView<SettingPageController> {
                   "assets/images/res_img_setting_tran.png",
                   "通用设置",
                   "assets/images/res_img_setting_general.png",
-                  "",
+                  TransSettingPage.routeName,
                   ""),
               const SizedBox(
                 height: 12,

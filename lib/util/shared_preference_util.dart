@@ -1,28 +1,28 @@
-import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferenceUtil {
-  //存值
-  static setData(String key, dynamic value) async {
-    var sp = await SharedPreferences.getInstance();
-    sp.setString(key, jsonEncode(value));
+
+  static setData(String key, value) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    if (value is String) {
+      prefs.setString(key, value);
+    } else if (value is num) {
+      prefs.setInt(key, value as int);
+    } else if (value is double) {
+      prefs.setDouble(key, value);
+    } else if (value is bool) {
+      prefs.setBool(key, value);
+    } else if (value is List) {
+      prefs.setStringList(key, value.cast<String>());
+    }
   }
 
-  //取值
-  static getData(String key) async {
-    try {
-      var sp = await SharedPreferences.getInstance();
-      String? va = sp.getString(key);
-
-      if (va != null) {
-        return json.decode(va);
-      } else {
-        return null;
-      }
-    } catch (e) {
-      return e.toString();
-    }
+  // 获取
+  static getData(String key, [dynamic replace]) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    var data = prefs.get(key);
+    return data ?? replace;
   }
 
   //移除指定数据

@@ -58,7 +58,6 @@ class LoginPage extends GetView<LoginPageController> {
                             fontSize: 19, color: DoColors.white),
                         autofocus: true,
                         cursorColor: DoColors.white85,
-                        obscureText: controller.isShowPassword.value,
                         controller: controller.emailController,
                         decoration: InputDecoration(
                           border: controller.customBorder,
@@ -94,7 +93,7 @@ class LoginPage extends GetView<LoginPageController> {
                                 fontSize: 19, color: DoColors.white),
                             autofocus: true,
                             cursorColor: DoColors.white85,
-                            obscureText: controller.isShowPassword.value,
+                            obscureText: controller.isShowPassword.value,//设置内容是否可见
                             controller: controller.pwdController,
                             decoration: InputDecoration(
                               border: controller.customBorder,

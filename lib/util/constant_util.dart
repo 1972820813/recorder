@@ -8,6 +8,9 @@ class ConstantUtil{
 
   static const String KEY_TOKEN = "key_token";
   static const String KEY_USER_EMAIL = "key_user_email";
+  static const String languageName = "language_name";
+
+
 
 
   static String generateMD5(String data) {

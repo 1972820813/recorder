@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:project_recorder/util/constant_util.dart';
+import 'package:project_recorder/util/shared_preference_util.dart';
 
 class NetworkManager {
   static String baseUrl = "https://a.vormor.cn/";
@@ -34,7 +35,7 @@ class NetworkManager {
       "n": "6TAbeO",
       "c": "M-20240530",
       "d": "2",
-      "f": "202411090000003",
+      "f": "202411090000001",
       "os": "M-20240530",
       "sv": "6.0",
     };

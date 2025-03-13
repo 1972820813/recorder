@@ -20,7 +20,11 @@ import 'package:project_recorder/model/main/main_page_binding.dart';
 import 'package:project_recorder/model/account//login/login_page_binding.dart';
 import 'package:project_recorder/model/account/userinfo/user_info_page.dart';
 import 'package:project_recorder/model/account/userinfo/user_info_page_binding.dart';
+import 'package:project_recorder/model/setting/ble/ble_page.dart';
+import 'package:project_recorder/model/setting/ble/ble_page_binding.dart';
 import 'package:project_recorder/model/setting/setting_page.dart';
+import 'package:project_recorder/model/setting/wifi/wifi_page.dart';
+import 'package:project_recorder/model/setting/wifi/wifi_page_binding.dart';
 import 'package:project_recorder/model/tool/tool_page.dart';
 import 'package:project_recorder/model/webView/cumstom_web_view.dart';
 
@@ -89,4 +93,12 @@ var routes = [
   GetPage(
       name: CustomWebView.routeName,
       page: () => const CustomWebView()),
+  GetPage(
+      name: WifiPage.routeName,
+      page: () => const WifiPage(),
+      binding: WifiPageBinding()),
+  GetPage(
+      name: BlePage.routeName,
+      page: () => const BlePage(),
+      binding: BlePageBinding()),
 ];

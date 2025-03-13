@@ -9,7 +9,7 @@
     },
     {
       "name": "archive",
-      "rootUri": "file:///C:/Users/yangg/AppData/Local/Pub/Cache/hosted/pub.dev/archive-4.0.1",
+      "rootUri": "file:///C:/Users/yangg/AppData/Local/Pub/Cache/hosted/pub.dev/archive-4.0.2",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -110,6 +110,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "flutter_blue_plus",
+      "rootUri": "file:///C:/Users/yangg/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_blue_plus-1.34.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
       "name": "flutter_easyloading",
       "rootUri": "file:///C:/Users/yangg/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_easyloading-3.0.5",
       "packageUri": "lib/",
@@ -189,9 +195,9 @@
     },
     {
       "name": "image",
-      "rootUri": "file:///C:/Users/yangg/AppData/Local/Pub/Cache/hosted/pub.dev/image-4.5.0",
+      "rootUri": "file:///C:/Users/yangg/AppData/Local/Pub/Cache/hosted/pub.dev/image-4.5.2",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.0"
     },
     {
       "name": "intl",
@@ -264,6 +270,36 @@
       "rootUri": "file:///C:/Users/yangg/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_windows-2.3.0",
       "packageUri": "lib/",
       "languageVersion": "3.2"
+    },
+    {
+      "name": "permission_handler",
+      "rootUri": "file:///C:/Users/yangg/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler-10.4.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "permission_handler_android",
+      "rootUri": "file:///C:/Users/yangg/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_android-10.3.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "permission_handler_apple",
+      "rootUri": "file:///C:/Users/yangg/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_apple-9.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "permission_handler_platform_interface",
+      "rootUri": "file:///C:/Users/yangg/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_platform_interface-3.12.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "permission_handler_windows",
+      "rootUri": "file:///C:/Users/yangg/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_windows-0.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "petitparser",
@@ -446,7 +482,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-12-16T11:55:20.636187Z",
+  "generated": "2025-02-11T03:56:50.746039Z",
   "generator": "pub",
   "generatorVersion": "3.2.5"
 }
