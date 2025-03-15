@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:project_recorder/model/account/register/register_page_controller.dart';
 import 'package:project_recorder/model/webView/cumstom_web_view.dart';
-import 'package:project_recorder/model/widget/click_text.dart';
 import 'package:project_recorder/util/app_colors.dart';
 import 'package:project_recorder/util/custom_widget.dart';
 
@@ -26,19 +25,13 @@ class RegisterPage extends GetView<RegisterPageController> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   customBar(""),
-                  const SizedBox(
-                    height: 30,
-                  ),
+                  commonSizedBox(height: 30),
                   Container(
                     padding: const EdgeInsets.fromLTRB(12, 30, 0, 0),
-                    child: const Text(
-                      "注册账号",
-                      style: TextStyle(fontSize: 24, color: DoColors.white85),
-                    ),
+                    child: commonText("注册账号",
+                        fontSize: 24, color: DoColors.white85),
                   ),
-                  const SizedBox(
-                    height: 50,
-                  ),
+                  commonSizedBox(height: 50),
                   Container(
                       margin: const EdgeInsets.fromLTRB(12, 12, 12, 0),
                       height: 50,
@@ -126,19 +119,13 @@ class RegisterPage extends GetView<RegisterPageController> {
                                 height: 22,
                                 color: DoColors.gray102,
                               ),
-                              InkWell(
-                                onTap: () {
-                                  controller.getVeryCode();
-                                },
-                                child: Text(
-                                  controller.veryCodeHing.value,
-                                  style: TextStyle(
-                                      fontSize: 19,
-                                      color: controller.isAcquireVeryCode.value
-                                          ? DoColors.customColor
-                                          : DoColors.gray102),
-                                ),
-                              ),
+                              commonClickText(controller.veryCodeHing.value,
+                                  fontSize: 19,
+                                  color: controller.isAcquireVeryCode.value
+                                      ? DoColors.customColor
+                                      : DoColors.gray102, onTap: () {
+                                controller.getVeryCode();
+                              })
                             ],
                           )),
                     ],
@@ -183,23 +170,19 @@ class RegisterPage extends GetView<RegisterPageController> {
                           alignment: Alignment.centerRight,
                           height: 50,
                           margin: const EdgeInsets.only(right: 24, top: 12),
-                          child: InkWell(
-                            onTap: () {
-                              controller.isShowPassword.value =
-                                  !controller.isShowPassword.value;
-
-                              controller.isShowPassword.value
-                                  ? controller.iconForgetPwdHint.value =
-                                      "assets/images/res_icon_hint.png"
-                                  : controller.iconForgetPwdHint.value =
-                                      "assets/images/res_icon_show.png";
-                            },
-                            child: Image.asset(
+                          child: commonClickImage(
                               controller.iconForgetPwdHint.value,
                               height: 20,
-                              width: 20,
-                            ),
-                          ))
+                              width: 20, onTap: () {
+                            controller.isShowPassword.value =
+                                !controller.isShowPassword.value;
+
+                            controller.isShowPassword.value
+                                ? controller.iconForgetPwdHint.value =
+                                    "assets/images/res_icon_hint.png"
+                                : controller.iconForgetPwdHint.value =
+                                    "assets/images/res_icon_show.png";
+                          }))
                     ],
                   ),
                   InkWell(
@@ -215,11 +198,8 @@ class RegisterPage extends GetView<RegisterPageController> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
                             color: DoColors.customColor),
-                        child: const Text(
-                          "确定",
-                          style:
-                              TextStyle(fontSize: 18, color: DoColors.white85),
-                        )),
+                        child: commonText("确定",
+                            fontSize: 18, color: DoColors.white85)),
                   ),
                 ],
               )),
@@ -229,9 +209,7 @@ class RegisterPage extends GetView<RegisterPageController> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(
-                  width: 12,
-                ),
+                commonSizedBox(width: 12),
                 InkWell(
                   onTap: () {
                     controller.isAgreementChecked.value =
@@ -256,39 +234,21 @@ class RegisterPage extends GetView<RegisterPageController> {
                           ),
                         ),
                 ),
-                const SizedBox(
-                  width: 4,
-                ),
-                agreementView("同意", DoColors.white60),
-                ClickText(
-                  title: "《服务协议》",
-                  color: DoColors.customColor,
-                  onTop: () {
-                    Get.toNamed(CustomWebView.routeName);
-                  },
-                ),
-                agreementView("和", DoColors.white60),
-                ClickText(
-                  title: "《隐私协议》",
-                  color: DoColors.customColor,
-                  onTop: () {
-                    Get.toNamed(CustomWebView.routeName);
-                  },
-                ),
+                commonSizedBox(width: 4),
+                commonClickText("同意", color: DoColors.white60, fontSize: 14),
+                commonClickText("《服务协议》",
+                    color: DoColors.customColor, fontSize: 14, onTap: () {
+                  Get.toNamed(CustomWebView.routeName);
+                }),
+                commonClickText("和", color: DoColors.white60, fontSize: 14),
+                commonClickText("《隐私协议》",
+                    color: DoColors.customColor, fontSize: 14, onTap: () {
+                  Get.toNamed(CustomWebView.routeName);
+                }),
               ],
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget agreementView(String title, Color color) {
-    return Text(
-      title,
-      style: TextStyle(
-        fontSize: 14,
-        color: color,
       ),
     );
   }

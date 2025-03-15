@@ -17,9 +17,6 @@ class WifiPage extends GetView<WifiPageController>{
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(
-            height: 40,
-          ),
           customBar(controller.pageTitle.value),
         ],
       ),

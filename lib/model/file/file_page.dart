@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_recorder/model/file/detail/record_details_page.dart';
+import 'package:project_recorder/util/custom_widget.dart';
 
 import '../../util/app_colors.dart';
 import 'file_page_controller.dart';
@@ -36,29 +37,20 @@ class FilePage extends GetView<FilePageController> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          controller.recordFileList[value].fileName,
-                          style: const TextStyle(
-                              fontSize: 19, color: DoColors.white85),
-                        ),
-                        const SizedBox(
-                          height: 6,
-                        ),
+                        commonText(controller.recordFileList[value].fileName,
+                            fontSize: 19, color: DoColors.white85),
+                        commonSizedBox(height: 6),
                         Row(
                           children: [
-                            Image.asset(
-                              "assets/images/res_icon_files_upload_success.png",
-                              width: 18,
-                              height: 18,
-                            ),
-                            const SizedBox(
-                              width: 4,
-                            ),
-                            Text(
-                              "${controller.recordFileList[value].fileTime}",
-                              style: const TextStyle(
-                                  fontSize: 16, color: DoColors.gray153),
-                            )
+                            commonImage(
+                                "assets/images/res_icon_files_upload_success.png",
+                                width: 18,
+                                height: 18),
+                            commonSizedBox(width: 4),
+                            commonText(
+                                "${controller.recordFileList[value].fileTime}",
+                                fontSize: 16,
+                                color: DoColors.gray153)
                           ],
                         )
                       ],

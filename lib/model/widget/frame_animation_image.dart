@@ -31,10 +31,8 @@ class FrameAnimationImageState extends State<FrameAnimationImage>
   void initState() {
     super.initState();
 
-    if (widget.interval != null) {
-      interval = widget.interval;
-    }
-    final int imageCount = widget._assetList.length;
+    interval = widget.interval;
+      final int imageCount = widget._assetList.length;
     final int maxTime = interval * imageCount;
 
     // 启动动画controller

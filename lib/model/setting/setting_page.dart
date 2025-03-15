@@ -5,6 +5,7 @@ import 'package:project_recorder/model/account//login/login_page.dart';
 import 'package:project_recorder/model/home/transsetting/trans_setting_page.dart';
 import 'package:project_recorder/model/setting/ble/ble_page.dart';
 import 'package:project_recorder/model/setting/wifi/wifi_page.dart';
+import 'package:project_recorder/util/custom_widget.dart';
 
 import '../../util/app_colors.dart';
 import '../../util/app_screenAdapter.dart';
@@ -33,9 +34,7 @@ class SettingPage extends GetView<SettingPageController> {
                   "assets/images/res_img_setting_offline_resource.png",
                   "",
                   ""),
-              const SizedBox(
-                height: 12,
-              ),
+              commonSizedBox(height: 12),
               _intermediateLayoutView(
                   "WLAN",
                   "assets/images/res_img_setting_wifi.png",
@@ -43,9 +42,7 @@ class SettingPage extends GetView<SettingPageController> {
                   "assets/images/res_img_setting_ble.png",
                   WifiPage.routeName,
                   BlePage.routeName),
-              const SizedBox(
-                height: 12,
-              ),
+              commonSizedBox(height: 12),
               _intermediateLayoutView(
                   "转写设置",
                   "assets/images/res_img_setting_tran.png",
@@ -53,9 +50,7 @@ class SettingPage extends GetView<SettingPageController> {
                   "assets/images/res_img_setting_general.png",
                   TransSettingPage.routeName,
                   ""),
-              const SizedBox(
-                height: 12,
-              ),
+              commonSizedBox(height: 12),
               _intermediateLayoutView(
                   "帮助与反馈",
                   "assets/images/res_img_setting_feedback.png",
@@ -63,9 +58,7 @@ class SettingPage extends GetView<SettingPageController> {
                   "assets/images/res_img_setting_update.png",
                   "",
                   ""),
-              const SizedBox(
-                height: 12,
-              ),
+              commonSizedBox(height: 12),
             ],
           ),
         ));
@@ -100,18 +93,10 @@ class SettingPage extends GetView<SettingPageController> {
                     width: 50,
                     height: 50,
                   ),
-            const SizedBox(
-              width: 6,
-            ),
-            Text(
-              controller.signInNow.value,
-              style: const TextStyle(fontSize: 19, color: DoColors.white85),
-            ),
-            Image.asset(
-              "assets/images/res_img_back.png",
-              width: 30,
-              height: 30,
-            )
+            commonSizedBox(width: 6),
+            commonText(controller.signInNow.value,
+                fontSize: 19, color: DoColors.white85),
+            commonImage("assets/images/res_img_back.png", width: 30, height: 30)
           ],
         ),
       ),
@@ -124,16 +109,11 @@ class SettingPage extends GetView<SettingPageController> {
       padding: const EdgeInsets.fromLTRB(12, 6, 12, 6),
       child: Stack(
         children: [
-          const Text(
-            "剩余云空间",
-            style: TextStyle(fontSize: 19, color: DoColors.white85),
-          ),
+          commonClickText("剩余云空间",
+              fontSize: 19, color: DoColors.white85, onTap: () {}),
           Container(
             alignment: Alignment.topRight,
-            child: const Text(
-              "--",
-              style: TextStyle(fontSize: 19, color: DoColors.white85),
-            ),
+            child: commonText("--", fontSize: 19, color: DoColors.white85),
           )
         ],
       ),
@@ -149,36 +129,24 @@ class SettingPage extends GetView<SettingPageController> {
         child: Stack(
           alignment: AlignmentDirectional.centerStart,
           children: [
-            Image.asset(
-              "assets/images/res_img_vip_bg.png",
-              width: DoScreenAdapter.screenW(),
-              height: 60,
-              fit: BoxFit.cover,
-            ),
+            Image.asset("assets/images/res_img_vip_bg.png",
+                width: DoScreenAdapter.screenW(),
+                height: 60,
+                fit: BoxFit.cover),
             Padding(
               padding: const EdgeInsets.only(left: 12),
-              child: Image.asset(
-                "assets/images/res_img_setting_vip.png",
-                width: 26,
-                height: 21,
-              ),
+              child: commonImage("assets/images/res_img_setting_vip.png",
+                  width: 26, height: 21),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 42),
-              child: Text(
-                controller.vipTitle.value,
-                style:
-                    const TextStyle(color: DoColors.vipTextColor, fontSize: 18),
-              ),
-            ),
+                padding: const EdgeInsets.only(left: 42),
+                child: commonText(controller.vipTitle.value,
+                    color: DoColors.vipTextColor, fontSize: 18)),
             Container(
               alignment: Alignment.centerRight,
               padding: const EdgeInsets.only(right: 12),
-              child: Image.asset(
-                "assets/images/res_img_vip_back.png",
-                width: 26,
-                height: 21,
-              ),
+              child: commonImage("assets/images/res_img_vip_back.png",
+                  width: 26, height: 21),
             ),
           ],
         ),
@@ -228,27 +196,18 @@ class SettingPage extends GetView<SettingPageController> {
           children: [
             Padding(
               padding: const EdgeInsets.only(left: 12),
-              child: Image.asset(
-                logoPath,
-                width: 26,
-                height: 21,
-              ),
+              child: commonImage(logoPath, width: 26, height: 21),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 42),
-              child: Text(
-                itemTitle,
-                style: const TextStyle(color: DoColors.white85, fontSize: 18),
-              ),
+              child:
+                  commonText(itemTitle, color: DoColors.white85, fontSize: 18),
             ),
             Container(
               alignment: Alignment.centerRight,
               padding: const EdgeInsets.only(right: 8),
-              child: Image.asset(
-                "assets/images/res_img_back.png",
-                width: 26,
-                height: 21,
-              ),
+              child: commonImage("assets/images/res_img_back.png",
+                  width: 26, height: 21),
             ),
           ],
         ),

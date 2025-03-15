@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:project_recorder/util/constant_util.dart';
 
 class LanguagePageController extends GetxController {
   RxString pageTitle = "选择语言".obs;

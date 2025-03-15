@@ -14,89 +14,89 @@ class RecordPage extends GetView<RecordPageController> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Container(
-      color: DoColors.black0,
-      child: Stack(
-        children: [
-          const SizedBox(
-            height: 40,
-          ),
-          customTitleCenterBar(controller.languageName),
-          Positioned(
-            bottom: 0,
-            child: Container(
-              decoration: const BoxDecoration(
-                  color: DoColors.black28,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(12),
-                      topRight: Radius.circular(12))),
-              width: DoScreenAdapter.screenW(),
-              height: 100,
-              alignment: Alignment.center,
-              child: Column(
-                children: [
-                  Container(
-                    decoration: const BoxDecoration(
-                        color: DoColors.gray40,
-                        borderRadius: BorderRadius.all(Radius.circular(5))),
-                    margin: const EdgeInsets.fromLTRB(12, 12, 12, 12),
-                    height: 36,
-                  ),
-                  SizedBox(
-                    width: DoScreenAdapter.screenW(),
-                    height: 40,
-                    child: Stack(
-                      children: [
-                        const Positioned(
-                          left: 12,
-                          child: Text(
-                            "计时器",
-                            style: TextStyle(
-                                color: DoColors.white85, fontSize: 14.0),
-                          ),
-                        ),
-                        Positioned(
-                          right: 12,
-                          child: InkWell(
-                            child: Image.asset(
-                              "assets/images/res_img_voice.png",
-                              width: 32,
-                              height: 32,
-                            ),
-                            onTap: () {},
-                          ),
-                        ),
-                        Positioned(
-                          right: 56,
-                          child: InkWell(
-                            child: Image.asset(
-                              "assets/images/res_img_voice.png",
-                              width: 32,
-                              height: 32,
-                            ),
-                            onTap: () {},
-                          ),
-                        ),
-                        Positioned(
-                          right: 100,
-                          child: InkWell(
-                            child: Image.asset(
-                              "assets/images/res_img_voice.png",
-                              width: 32,
-                              height: 32,
-                            ),
-                            onTap: () {},
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-                ],
+    return Obx(() => Container(
+          color: DoColors.black0,
+          child: Stack(
+            children: [
+              const SizedBox(
+                height: 40,
               ),
-            ),
-          )
-        ],
-      ),
-    );
+              customTitleCenterBar(controller.languageName.value),
+              Positioned(
+                bottom: 0,
+                child: Container(
+                  decoration: const BoxDecoration(
+                      color: DoColors.black28,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(12),
+                          topRight: Radius.circular(12))),
+                  width: DoScreenAdapter.screenW(),
+                  height: 100,
+                  alignment: Alignment.center,
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                            color: DoColors.gray40,
+                            borderRadius: BorderRadius.all(Radius.circular(5))),
+                        margin: const EdgeInsets.fromLTRB(12, 12, 12, 12),
+                        height: 36,
+                      ),
+                      SizedBox(
+                        width: DoScreenAdapter.screenW(),
+                        height: 40,
+                        child: Stack(
+                          children: [
+                            const Positioned(
+                              left: 12,
+                              child: Text(
+                                "计时器",
+                                style: TextStyle(
+                                    color: DoColors.white85, fontSize: 14.0),
+                              ),
+                            ),
+                            Positioned(
+                              right: 12,
+                              child: InkWell(
+                                child: Image.asset(
+                                  "assets/images/res_img_voice.png",
+                                  width: 32,
+                                  height: 32,
+                                ),
+                                onTap: () {},
+                              ),
+                            ),
+                            Positioned(
+                              right: 56,
+                              child: InkWell(
+                                child: Image.asset(
+                                  "assets/images/res_img_voice.png",
+                                  width: 32,
+                                  height: 32,
+                                ),
+                                onTap: () {},
+                              ),
+                            ),
+                            Positioned(
+                              right: 100,
+                              child: InkWell(
+                                child: Image.asset(
+                                  "assets/images/res_img_voice.png",
+                                  width: 32,
+                                  height: 32,
+                                ),
+                                onTap: () {},
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
+        ));
   }
 }

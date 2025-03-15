@@ -40,7 +40,7 @@ class LoginPageController extends GetxController {
           title: "警示信息",
           content: const Text(
             "请勾选协议",
-            style: TextStyle(fontSize: 18, color: DoColors.white85),
+            style: TextStyle(fontSize: 18, color: DoColors.gray39),
           ));
       return;
     }

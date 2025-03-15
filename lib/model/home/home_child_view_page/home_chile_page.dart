@@ -4,6 +4,7 @@ import 'package:project_recorder/model/home/language/language_page.dart';
 import 'package:project_recorder/model/home/schema/schema_details_page.dart';
 import 'package:project_recorder/model/home/transsetting/trans_setting_page.dart';
 import 'package:project_recorder/util/app_colors.dart';
+import 'package:project_recorder/util/custom_widget.dart';
 import 'home_child_page_controller.dart';
 
 class HomeChildPage extends GetView<HomeChildPageController> {
@@ -36,70 +37,45 @@ class HomeChildPage extends GetView<HomeChildPageController> {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text(
-                          childTitle,
-                          style: const TextStyle(
-                              fontSize: 20, color: DoColors.white85),
-                        ),
-                        const SizedBox(width: 6), // 50宽度
-                        InkWell(
-                          child: Image.asset(
-                            "assets/images/res_img_warn.png",
-                            width: 20,
-                            height: 20,
-                          ),
-                          onTap: () {
-                            Get.toNamed(SchemaDetailsPage.routeName,
-                                arguments: {
-                                  "home_child_page_index": childCurrent,
-                                });
-                          },
-                        )
+                        commonText(childTitle,
+                            fontSize: 20, color: DoColors.white85),
+                        commonSizedBox(width: 6),
+                        commonClickImage("assets/images/res_img_warn.png",
+                            width: 20, height: 20, onTap: () {
+                          Get.toNamed(SchemaDetailsPage.routeName, arguments: {
+                            "home_child_page_index": childCurrent
+                          });
+                        }),
+                        // 50宽度
                       ],
                     ),
-                    Text(
-                      childContent,
-                      style: const TextStyle(
-                          fontSize: 16, color: DoColors.gray102),
-                    ),
+                    commonText(childContent,
+                        fontSize: 16, color: DoColors.gray102),
                   ],
                 )),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
-            child: Image.asset(
-              "assets/images/res_ip_0.png",
-              width: 80,
-              height: 80,
-            ),
+            child: commonImage("assets/images/res_ip_0.png",
+                width: 80, height: 80),
           ),
           Container(
             alignment: Alignment.topRight,
             margin: const EdgeInsets.fromLTRB(0, 75, 28, 0),
-            child: InkWell(
-              child: Image.asset(
+            child: commonClickImage(
                 "assets/images/res_img_record_model_online.png",
                 width: 30,
-                height: 30,
-              ),
-              onTap: () {
-                Get.toNamed(TransSettingPage.routeName);
-              },
-            ),
+                height: 30, onTap: () {
+              Get.toNamed(TransSettingPage.routeName);
+            }),
           ),
           Container(
             alignment: Alignment.bottomCenter,
             margin: const EdgeInsets.only(bottom: 70),
-            child: InkWell(
-              child: Image.asset(
-                "assets/images/res_img_voice.png",
-                width: 60,
-                height: 60,
-              ),
-              onTap: () {
-                Get.toNamed(LanguagePage.routeName);
-              },
-            ),
+            child: commonClickImage("assets/images/res_img_voice.png",
+                width: 30, height: 30, onTap: () {
+              Get.toNamed(LanguagePage.routeName);
+            }),
           )
         ],
       ),

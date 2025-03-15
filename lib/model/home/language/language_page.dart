@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:project_recorder/model/home/record/record_page.dart';
 import 'package:project_recorder/util/app_colors.dart';
@@ -33,18 +32,12 @@ class LanguagePage extends GetView<LanguagePageController> {
               width: DoScreenAdapter.screenW(),
               height: 84,
               alignment: Alignment.center,
-              child: InkWell(
-                child: Image.asset(
-                  "assets/images/res_img_voice.png",
-                  width: 60,
-                  height: 60,
-                ),
-                onTap: () {
-                  Get.toNamed(RecordPage.routeName, arguments: {
-                    ConstantUtil.languageName: controller.languageName.value
-                  });
-                },
-              ),
+              child: commonClickImage("assets/images/res_img_voice.png",
+                  width: 60, height: 60, onTap: () {
+                Get.toNamed(RecordPage.routeName, arguments: {
+                  ConstantUtil.languageName: controller.languageName.value
+                });
+              }),
             ),
           ),
         ])));

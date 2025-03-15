@@ -19,20 +19,14 @@ class SchemaDetailsPage extends GetView<SchemaDetailsPageController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(
-                height: 40,
-              ),
+              commonSizedBox(height: 40),
               customBar(controller.pageTitle.value),
               _contentView(controller.modeIntroduction.value,
                   controller.modeContent1.value),
-              const SizedBox(
-                height: 10,
-              ),
+              commonSizedBox(height: 40),
               _contentView(controller.micIntroduction.value,
                   controller.modeContent2.value),
-              const SizedBox(
-                height: 10,
-              ),
+              commonSizedBox(height: 40),
               _contentView(controller.placementIntroduction.value,
                   controller.modeContent3.value),
             ],
@@ -44,21 +38,16 @@ class SchemaDetailsPage extends GetView<SchemaDetailsPageController> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16, 4, 16, 4),
-          child: Text(
-            title,
-            style: const TextStyle(fontSize: 18, color: DoColors.white85),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16, 4, 16, 4),
-          child: Text(
-            content,
-            style: const TextStyle(fontSize: 18, color: DoColors.gray102),
-          ),
-        ),
+        _contentDetail(title, DoColors.white85),
+        _contentDetail(content, DoColors.gray102),
       ],
+    );
+  }
+
+  Widget _contentDetail(String message, Color color) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 4, 16, 4),
+      child: commonText(message, fontSize: 18, color: color),
     );
   }
 }

@@ -22,19 +22,12 @@ class ForgetPage extends GetView<ForgetPageController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               customBar(""),
-              const SizedBox(
-                height: 30,
-              ),
+              commonSizedBox(height: 30),
               Container(
-                padding: const EdgeInsets.fromLTRB(12, 30, 0, 0),
-                child: const Text(
-                  "重置密码",
-                  style: TextStyle(fontSize: 24, color: DoColors.white85),
-                ),
-              ),
-              const SizedBox(
-                height: 50,
-              ),
+                  padding: const EdgeInsets.fromLTRB(12, 30, 0, 0),
+                  child: commonText("重置密码",
+                      fontSize: 24, color: DoColors.white85)),
+              commonSizedBox(height: 50),
               Container(
                   margin: const EdgeInsets.fromLTRB(12, 12, 12, 0),
                   height: 50,
@@ -118,19 +111,13 @@ class ForgetPage extends GetView<ForgetPageController> {
                             height: 22,
                             color: DoColors.gray102,
                           ),
-                          InkWell(
-                            onTap: () {
-                              controller.getVeryCode;
-                            },
-                            child: Text(
-                              controller.veryCodeHing.value,
-                              style: TextStyle(
-                                  fontSize: 19,
-                                  color: controller.isAcquireVeryCode.value
-                                      ? DoColors.customColor
-                                      : DoColors.gray102),
-                            ),
-                          ),
+                          commonClickText(controller.veryCodeHing.value,
+                              fontSize: 19,
+                              color: controller.isAcquireVeryCode.value
+                                  ? DoColors.customColor
+                                  : DoColors.gray102, onTap: () {
+                            controller.getVeryCode;
+                          }),
                         ],
                       )),
                 ],
@@ -172,26 +159,21 @@ class ForgetPage extends GetView<ForgetPageController> {
                         },
                       )),
                   Container(
-                      alignment: Alignment.centerRight,
-                      height: 50,
-                      margin: const EdgeInsets.only(right: 24, top: 12),
-                      child: InkWell(
-                        onTap: () {
-                          controller.isShowPassword.value =
-                              !controller.isShowPassword.value;
+                    alignment: Alignment.centerRight,
+                    height: 50,
+                    margin: const EdgeInsets.only(right: 24, top: 12),
+                    child: commonClickImage(controller.iconForgetPwdHint.value,
+                        height: 20, width: 20, onTap: () {
+                      controller.isShowPassword.value =
+                          !controller.isShowPassword.value;
 
-                          controller.isShowPassword.value
-                              ? controller.iconForgetPwdHint.value =
-                                  "assets/images/res_icon_hint.png"
-                              : controller.iconForgetPwdHint.value =
-                                  "assets/images/res_icon_show.png";
-                        },
-                        child: Image.asset(
-                          controller.iconForgetPwdHint.value,
-                          height: 20,
-                          width: 20,
-                        ),
-                      ))
+                      controller.isShowPassword.value
+                          ? controller.iconForgetPwdHint.value =
+                              "assets/images/res_icon_hint.png"
+                          : controller.iconForgetPwdHint.value =
+                              "assets/images/res_icon_show.png";
+                    }),
+                  )
                 ],
               ),
               InkWell(
@@ -206,10 +188,8 @@ class ForgetPage extends GetView<ForgetPageController> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
                         color: DoColors.customColor),
-                    child: const Text(
-                      "确定",
-                      style: TextStyle(fontSize: 18, color: DoColors.white85),
-                    )),
+                    child: commonText("确定",
+                        fontSize: 18, color: DoColors.white85)),
               ),
             ],
           )),

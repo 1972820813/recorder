@@ -31,32 +31,32 @@ class MainPage extends GetView<MainPageController> {
               controller.pageController.jumpToPage(index);
             },
             items: [
-              BottomNavigationBarItem(
-                  icon: controller
-                      .mainTabIcon("assets/images/res_icon_normal_record.png"),
-                  activeIcon: controller
-                      .mainTabIcon("assets/images/res_icon_select_record.png"),
-                  label: "录音"),
-              BottomNavigationBarItem(
-                  icon: controller
-                      .mainTabIcon("assets/images/res_icon_normal_files.png"),
-                  activeIcon: controller
-                      .mainTabIcon("assets/images/res_icon_select_files.png"),
-                  label: "文件"),
-              BottomNavigationBarItem(
-                  icon: controller
-                      .mainTabIcon("assets/images/res_img_ai_default.png"),
-                  activeIcon: controller
-                      .mainTabIcon("assets/images/res_img_ai_selected.png"),
-                  label: "AI"),
-              BottomNavigationBarItem(
-                  icon: controller
-                      .mainTabIcon("assets/images/res_img_setting_default.png"),
-                  activeIcon: controller.mainTabIcon(
-                      "assets/images/res_img_setting_selected.png"),
-                  label: "设置"),
+              _bottomNavigationBarItem(
+                  "录音",
+                  "assets/images/res_icon_normal_record.png",
+                  "assets/images/res_icon_select_record.png"),
+              _bottomNavigationBarItem(
+                  "文件",
+                  "assets/images/res_icon_normal_files.png",
+                  "assets/images/res_icon_select_files.png"),
+              _bottomNavigationBarItem(
+                  "AI",
+                  "assets/images/res_img_ai_default.png",
+                  "assets/images/res_img_ai_selected.png"),
+              _bottomNavigationBarItem(
+                  "设置",
+                  "assets/images/res_img_setting_default.png",
+                  "assets/images/res_img_setting_selected.png")
             ],
           ),
         ));
+  }
+
+  BottomNavigationBarItem _bottomNavigationBarItem(
+      String content, String defaultIconPath, String activateIconPath) {
+    return BottomNavigationBarItem(
+        icon: controller.mainTabIcon(defaultIconPath),
+        activeIcon: controller.mainTabIcon(activateIconPath),
+        label: content);
   }
 }
