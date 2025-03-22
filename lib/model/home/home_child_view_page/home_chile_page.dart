@@ -73,7 +73,7 @@ class HomeChildPage extends GetView<HomeChildPageController> {
             alignment: Alignment.bottomCenter,
             margin: const EdgeInsets.only(bottom: 70),
             child: commonClickImage("assets/images/res_img_voice.png",
-                width: 30, height: 30, onTap: () {
+                width: 40, height: 40, onTap: () {
               Get.toNamed(LanguagePage.routeName);
             }),
           )

@@ -11,7 +11,6 @@ import 'package:project_recorder/util/app_colors.dart';
 import 'package:project_recorder/util/app_language.dart';
 import 'package:project_recorder/util/theme.dart';
 
-
 void main() {
   //flutter 修改状态栏的颜色
   SystemUiOverlayStyle systemUiOverlayStyle =
@@ -65,9 +64,13 @@ void main() {
           );
         }),
   );
-  FlutterNativeSplash.remove();
-
+  initialization();
   configLoading();
+}
+
+void initialization() async {
+  await Future.delayed(const Duration(seconds: 3));
+  FlutterNativeSplash.remove();
 }
 
 void configLoading() {

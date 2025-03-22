@@ -163,11 +163,10 @@ class LoginPage extends GetView<LoginPageController> {
                               !controller.isAgreementChecked.value;
                         },
                         child: controller.isAgreementChecked.value
-                            ? Image.asset(
+                            ? commonImage(
                                 "assets/images/res_icon_agreement_checked.png",
                                 height: 20,
-                                width: 20,
-                              )
+                                width: 20)
                             : Padding(
                                 padding: const EdgeInsets.all(0),
                                 child: Container(

@@ -19,14 +19,13 @@ class SchemaDetailsPage extends GetView<SchemaDetailsPageController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              commonSizedBox(height: 40),
               customBar(controller.pageTitle.value),
               _contentView(controller.modeIntroduction.value,
                   controller.modeContent1.value),
-              commonSizedBox(height: 40),
+              commonSizedBox(height: 20),
               _contentView(controller.micIntroduction.value,
                   controller.modeContent2.value),
-              commonSizedBox(height: 40),
+              commonSizedBox(height: 20),
               _contentView(controller.placementIntroduction.value,
                   controller.modeContent3.value),
             ],

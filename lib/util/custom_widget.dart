@@ -8,7 +8,7 @@ import 'app_colors.dart';
 ///通用app bar
 Widget customBar(String title) {
   return Container(
-    height: 45.w,
+    height: 45,
     color: DoColors.black0,
     child: Row(
       children: [
@@ -23,7 +23,7 @@ Widget customBar(String title) {
 Widget customTitleCenterBar(String title) {
   return Container(
     width: DoScreenAdapter.screenW(),
-    height: 45.w,
+    height: 45,
     color: DoColors.black0,
     child: Stack(
       alignment: Alignment.center,
@@ -38,7 +38,7 @@ Widget customTitleCenterBar(String title) {
 ///通用头布局
 Widget commonTitle() {
   return commonClickImage("assets/images/icon_custom_back.png",
-      width: 40, height: 18, onTap: () {
+      width: 30, height: 20, onTap: () {
     Get.back();
   });
 }
@@ -70,7 +70,7 @@ Widget commonText(String message,
     message,
     style: TextStyle(
         color: color ?? DoColors.mainTabBackground,
-        fontSize: fontSize?.sp ?? 18.sp,
+        fontSize: fontSize ?? 20,
         decoration: decoration,
         decorationColor: decorationColor),
   );
@@ -87,10 +87,10 @@ Widget commonClickImage(String name,
 
 ///通用image
 Widget commonImage(String name, {double? width, double? height}) {
-  return Image.asset(name, width: width?.w, height: height?.w);
+  return Image.asset(name, width: width, height: height);
 }
 
 ///通用组件，间隔
 Widget commonSizedBox({double? width, double? height}) {
-  return SizedBox(width: width?.w, height: height?.w);
+  return SizedBox(width: width, height: height);
 }

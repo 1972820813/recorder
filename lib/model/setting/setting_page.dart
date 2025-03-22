@@ -132,7 +132,7 @@ class SettingPage extends GetView<SettingPageController> {
             Image.asset("assets/images/res_img_vip_bg.png",
                 width: DoScreenAdapter.screenW(),
                 height: 60,
-                fit: BoxFit.cover),
+                fit: BoxFit.fitWidth),
             Padding(
               padding: const EdgeInsets.only(left: 12),
               child: commonImage("assets/images/res_img_setting_vip.png",
@@ -199,7 +199,7 @@ class SettingPage extends GetView<SettingPageController> {
               child: commonImage(logoPath, width: 26, height: 21),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 42),
+              padding: const EdgeInsets.only(left: 48),
               child:
                   commonText(itemTitle, color: DoColors.white85, fontSize: 18),
             ),

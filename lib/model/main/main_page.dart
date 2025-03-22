@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 
 import '../../util/app_colors.dart';
@@ -8,6 +9,8 @@ class MainPage extends GetView<MainPageController> {
   static const routeName = "/main_page";
 
   const MainPage({super.key});
+
+
 
   @override
   Widget build(BuildContext context) {

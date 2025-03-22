@@ -18,9 +18,6 @@ class TransSettingPage extends GetView<TransSettingPageController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(
-                height: 40,
-              ),
               customBar(controller.pageTitle.value),
             ],
           ),
