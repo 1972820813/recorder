@@ -21,9 +21,7 @@ class LanguagePage extends GetView<LanguagePageController> {
         height: DoScreenAdapter.screenH(),
         color: DoColors.black0,
         child: Stack(children: [
-          const SizedBox(
-            height: 40,
-          ),
+          commonSizedBox(height: 40),
           customBar(controller.pageTitle.value),
           Positioned(
             bottom: 0,
@@ -35,7 +33,8 @@ class LanguagePage extends GetView<LanguagePageController> {
               child: commonClickImage("assets/images/res_img_voice.png",
                   width: 60, height: 60, onTap: () {
                 Get.toNamed(RecordPage.routeName, arguments: {
-                  ConstantUtil.languageName: controller.languageName.value
+                  ConstantUtil.languageName: controller.languageName.value,
+                  ConstantUtil.recordMode: controller.recordMode
                 });
               }),
             ),

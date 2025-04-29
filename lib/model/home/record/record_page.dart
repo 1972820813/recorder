@@ -59,29 +59,33 @@ class RecordPage extends GetView<RecordPageController> {
                               right: 12,
                               child: InkWell(
                                 child: Image.asset(
-                                  "assets/images/res_img_voice.png",
+                                  "assets/images/res_img_photo.png",
                                   width: 32,
                                   height: 32,
                                 ),
-                                onTap: () {},
+                                onTap: () {
+                                  controller.startRecording();
+                                },
                               ),
                             ),
                             Positioned(
                               right: 56,
                               child: InkWell(
                                 child: Image.asset(
-                                  "assets/images/res_img_voice.png",
+                                  "assets/images/res_img_flag.png",
                                   width: 32,
                                   height: 32,
                                 ),
-                                onTap: () {},
+                                onTap: () {
+                                  controller.stopRecording();
+                                },
                               ),
                             ),
                             Positioned(
                               right: 100,
                               child: InkWell(
                                 child: Image.asset(
-                                  "assets/images/res_img_voice.png",
+                                  "assets/images/res_img_recording.png",
                                   width: 32,
                                   height: 32,
                                 ),

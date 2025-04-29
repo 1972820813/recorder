@@ -16,6 +16,10 @@ void main() {
   SystemUiOverlayStyle systemUiOverlayStyle =
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent);
   SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+  WidgetsFlutterBinding.ensureInitialized(); // 确保 Flutter 绑定初始化
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then((_){
+
+  });
 
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
